@@ -14,7 +14,7 @@ Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/YAML/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	b2da17e2393888cdc5996dc48fbae71a
+# Source0-md5:	7a8b9258a311e52d0938744ad2ddfc4d
 URL:		http://search.cpan.org/dist/YAML-LibYAML/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
