@@ -8,7 +8,7 @@
 Summary:	YAML::XS::LibYAML - An XS Wrapper Module of libyaml
 Summary(pl.UTF-8):	YAML::XS::LibYAML - moduł wrappera XS dla libyaml
 Name:		perl-YAML-LibYAML
-Version:	0.26
+Version:	0.32
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
@@ -56,9 +56,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README
 %{perl_vendorarch}/YAML/*.pm
-%dir %{perl_vendorarch}/YAML/XS
-%{perl_vendorarch}/YAML/XS/LibYAML.pm
+%{perl_vendorarch}/YAML/XS
+%dir %{perl_vendorarch}/auto/YAML/XS
 %dir %{perl_vendorarch}/auto/YAML/XS/LibYAML
-%{perl_vendorarch}/auto/YAML/XS/LibYAML/*.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/YAML/XS/LibYAML/*.so
 %{_mandir}/man3/*
