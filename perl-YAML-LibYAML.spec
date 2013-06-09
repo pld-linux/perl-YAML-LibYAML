@@ -15,6 +15,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/YAML/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	951ea0542ed7228ba285196e437c8d89
+Patch0:		format-error.patch
 URL:		http://search.cpan.org/dist/YAML-LibYAML/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -33,6 +34,7 @@ YAML::XS::LibYAML to moduł wrappera XS dla libyaml.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
