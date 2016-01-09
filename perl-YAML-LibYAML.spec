@@ -8,16 +8,15 @@
 Summary:	YAML::XS::LibYAML - An XS Wrapper Module of libyaml
 Summary(pl.UTF-8):	YAML::XS::LibYAML - moduł wrappera XS dla libyaml
 Name:		perl-YAML-LibYAML
-Version:	0.41
-Release:	4
+Version:	0.59
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/YAML/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	951ea0542ed7228ba285196e437c8d89
-Patch0:		format-error.patch
+# Source0-md5:	733e63b743088781eb8cad6477cd4905
 URL:		http://search.cpan.org/dist/YAML-LibYAML/
-BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,7 +33,6 @@ YAML::XS::LibYAML to moduł wrappera XS dla libyaml.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
@@ -51,15 +49,20 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/YAML/*.pod
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorarch}/YAML/*.pm
+%{perl_vendorarch}/YAML/LibYAML.pm
+%{perl_vendorarch}/YAML/XS.pm
 %{perl_vendorarch}/YAML/XS
 %dir %{perl_vendorarch}/auto/YAML/XS
 %dir %{perl_vendorarch}/auto/YAML/XS/LibYAML
-%attr(755,root,root) %{perl_vendorarch}/auto/YAML/XS/LibYAML/*.so
-%{_mandir}/man3/*
+%attr(755,root,root) %{perl_vendorarch}/auto/YAML/XS/LibYAML/LibYAML.so
+%{_mandir}/man3/YAML::LibYAML.3pm*
+%{_mandir}/man3/YAML::XS.3pm*
+%{_mandir}/man3/YAML::XS::LibYAML.3pm*
