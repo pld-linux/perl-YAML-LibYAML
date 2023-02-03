@@ -1,19 +1,19 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define	pdir	YAML
 %define	pnam	LibYAML
 Summary:	YAML::XS::LibYAML - An XS Wrapper Module of libyaml
 Summary(pl.UTF-8):	YAML::XS::LibYAML - moduł wrappera XS dla libyaml
 Name:		perl-YAML-LibYAML
-Version:	0.83
-Release:	3
+Version:	0.86
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/YAML/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	5c019115eae8079e74a407c74c4564f0
+Source0:	https://www.cpan.org/modules/by-module/YAML/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	416e14d9a6daf7bb37998c0aca488c11
 URL:		https://metacpan.org/release/YAML-LibYAML
 BuildRequires:	perl-ExtUtils-MakeMaker
 %if %{with tests}
