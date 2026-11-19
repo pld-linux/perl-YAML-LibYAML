@@ -7,17 +7,18 @@
 Summary:	YAML::XS::LibYAML - An XS Wrapper Module of libyaml
 Summary(pl.UTF-8):	YAML::XS::LibYAML - moduł wrappera XS dla libyaml
 Name:		perl-YAML-LibYAML
-Version:	0.90
-Release:	2
+Version:	0.910.0
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	https://www.cpan.org/modules/by-module/YAML/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	e4e8becee2d8c3826499cc17fadaf946
+Source0:	https://www.cpan.org/modules/by-authors/id/T/TI/TINITA/%{pdir}-%{pnam}-v%{version}.tar.gz
+# Source0-md5:	c93f942fcd613841291d696cb378548a
 URL:		https://metacpan.org/dist/YAML-LibYAML
 BuildRequires:	perl-ExtUtils-MakeMaker
 %if %{with tests}
 BuildRequires:	perl-Test-Simple >= 0.90
+BuildRequires:	perl-Test-Warnings
 %endif
 BuildRequires:	perl-devel >= 1:5.8.1
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -36,7 +37,7 @@ libyaml.
 YAML::XS::LibYAML to moduł wrappera XS dla libyaml.
 
 %prep
-%setup -q -n %{pdir}-%{pnam}-%{version}
+%setup -q -n %{pdir}-%{pnam}-v%{version}
 
 %build
 %{__perl} Makefile.PL \
